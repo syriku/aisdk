@@ -40,11 +40,11 @@ func newAnthropicFactory(userConfig UserConfig) ApiFactory {
 }
 
 func (a *anthropicFactory) Models() ModelsApi {
-	return nil // TODO: implement
+	return newAnthropicModels(a.userConfig)
 }
 
 func (a *anthropicFactory) ChatCompletions(model string) ChatCompletionsApi {
-	return nil // TODO: implement
+	return newAnthropicChatCompletions(a.userConfig, model)
 }
 
 // NewFactory creates and returns a new ApiFactory instance based on the Type in UserConfig.
